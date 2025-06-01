@@ -1,3 +1,11 @@
+import { TextStyle } from 'react-native';
+
+type FontScale = Record<string, TextStyle>;
+
+export type FontSystem = {
+  [key: string]: FontScale | TextStyle;
+};
+
 export const fonts = {
   headline: {
     h1: {
@@ -17,12 +25,20 @@ export const fonts = {
       fontSize: 20,
     },
   },
-  Btn1: {
-    fontFamily: 'Inter-SemiBold',
-    fontSize: 16,
+  body: {
+    b1: {
+      fontFamily: 'Inter-Regular',
+      fontSize: 16,
+    },
   },
-  Btn2: {
-    fontFamily: 'Inter-SemiBold',
-    fontSize: 14,
+  button: {
+    Btn1: {
+      fontFamily: 'Inter-SemiBold',
+      fontSize: 16,
+    },
+    Btn2: {
+      fontFamily: 'Inter-SemiBold',
+      fontSize: 14,
+    },
   },
-};
+} satisfies FontSystem;
