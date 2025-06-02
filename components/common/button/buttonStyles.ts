@@ -1,61 +1,17 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { fonts } from '@/styles/Fonts';
+import { StyleSheet } from 'react-native';
 import { Colors } from '@/styles/Colors';
-import { ArrowLeft, ArrowRight } from '@/shared/assets/icons/arrow';
 
-type Props = {
-  label: string;
-  size?: 'large' | 'medium' | 'small';
-  type?: 'filled' | 'outline' | 'text';
-  isDisable?: boolean;
-};
-
-export default function CustomButton({ label, isDisable = false, size = 'large', type = 'filled' }: Props) {
-  const getButtonStyle = (pressed: boolean) => {
-    if (isDisable) return buttonStyles[type].disabled;
-    return pressed ? buttonStyles[type].pressed : buttonStyles[type].default;
-  };
-
-  const getTypoStyle = (pressed: boolean) => {
-    if (isDisable) return typoStyles[type].disabled;
-    return pressed ? typoStyles[type].pressed : typoStyles[type].default;
-  };
-
-  return (
-    <Pressable
-      onPress={() => console.log('Pressable')}
-      accessibilityState={{ disabled: isDisable }}
-      disabled={isDisable}
-      style={({ pressed }) => [styles.base, getButtonStyle(pressed)]}>
-      {({ pressed }) => (
-        <View style={styles.typoBase}>
-          <ArrowLeft size={24} color={getTypoStyle(pressed).color} />
-          <Text style={[styles.label, getTypoStyle(pressed)]}>{label}</Text>
-          <ArrowRight size={24} color={getTypoStyle(pressed).color} />
-        </View>
-      )}
-    </Pressable>
-  );
-}
-
-const styles = StyleSheet.create({
-  base: {
+const buttonSize = {
+  large: {
     height: 48,
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 16,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
-  label: {
-    ...fonts.button.Btn1,
+  medium: {
+    height: 44,
   },
-
-  typoBase: {
-    gap: 4,
-    flexDirection: 'row',
+  small: {
+    height: 40,
   },
-});
+};
 
 const buttonStyles = {
   filled: StyleSheet.create({
@@ -136,3 +92,5 @@ const typoStyles = {
     },
   }),
 };
+
+export { buttonStyles, typoStyles, buttonSize };
