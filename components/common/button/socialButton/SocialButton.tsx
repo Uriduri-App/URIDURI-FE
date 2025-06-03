@@ -1,8 +1,8 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { fonts } from '@/styles/Fonts';
-import { Google } from '@/shared/assets/icons/social';
 import { getSocialButtonStyle, getSocialTypoStyle } from './socialButtonUtils';
 import { getButtonSize } from '../shared/utils';
+import { Google } from '@/shared/assets/icons/social';
 import { SocialButtonProps } from './socialButtonTypes';
 
 export default function SocialButton({
@@ -10,6 +10,7 @@ export default function SocialButton({
   isDisable = false,
   size = 'large',
   type = 'filled',
+  icon,
   ...props
 }: SocialButtonProps) {
   return (
@@ -20,7 +21,7 @@ export default function SocialButton({
       accessibilityState={{ disabled: isDisable }}>
       {({ pressed }) => (
         <View style={styles.typoBase}>
-          <Google size={24} />
+          {icon && <Google size={24} />}
 
           {label && <Text style={[styles.label, getSocialTypoStyle(pressed, type, isDisable)]}>{label}</Text>}
         </View>
