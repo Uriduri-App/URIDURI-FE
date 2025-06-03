@@ -1,5 +1,5 @@
 import Svg, { ClipPath, Defs, G, Path, Rect } from 'react-native-svg';
-import { IconProps } from '@/shared/assets/icons/types';
+import { IconProps } from '../types';
 import { Colors } from '@/styles/Colors';
 
 export default function ArrowLeft({ size = 24, color = Colors.textIcon['500'] }: IconProps) {

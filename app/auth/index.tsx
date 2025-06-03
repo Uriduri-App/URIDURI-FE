@@ -2,6 +2,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { StyleSheet, Text, View } from 'react-native';
 import { WelcomeTitle } from '@/components/auth';
 import { CustomButton } from '@/components/common';
+import { SocialButton } from '@/components/common/button';
 
 export default function AuthScreen() {
   return (
@@ -9,7 +10,7 @@ export default function AuthScreen() {
       <WelcomeTitle title={'반가워요!'} subtitle={'당신만의 여정, 지금부터 시작됩니다'} />
       <View>
         <View>
-          <Text>구글</Text>
+          <SocialButton label={'구글로 시작하기'} type={'outline'} />
           <Text>페이스북</Text>
           <Text>애플</Text>
         </View>
