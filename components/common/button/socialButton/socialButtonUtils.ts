@@ -1,4 +1,3 @@
-import { ButtonType } from '@/components/common/button/customButton/buttonTypes';
 import { socialButtonStyles, socialTypoStyles } from './socialButtonStyle';
 
 const getSocialButtonStyle = (pressed: boolean, type: ButtonType, isDisable: boolean) => {

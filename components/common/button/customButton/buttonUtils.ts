@@ -1,5 +1,5 @@
-import { buttonSize, buttonStyles, typoStyles } from '@/components/common/button/customButton/buttonStyles';
-import { ButtonSize, ButtonType } from '@/components/common/button/customButton/buttonTypes';
+import { buttonStyles, typoStyles } from './buttonStyles';
+import { ButtonType } from './buttonTypes';
 
 const getButtonStyle = (pressed: boolean, type: ButtonType, isDisable: boolean) => {
   if (isDisable) return buttonStyles[type].disabled;
@@ -11,8 +11,4 @@ const getTypoStyle = (pressed: boolean, type: ButtonType, isDisable: boolean) =>
   return pressed ? typoStyles[type].pressed : typoStyles[type].default;
 };
 
-const getButtonSize = (size: ButtonSize) => {
-  return buttonSize[size];
-};
-
-export { getButtonStyle, getTypoStyle, getButtonSize };
+export { getButtonStyle, getTypoStyle };

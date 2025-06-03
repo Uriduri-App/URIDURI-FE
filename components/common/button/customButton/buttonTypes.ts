@@ -1,8 +1,5 @@
 import type { PressableProps } from 'react-native';
-
-type ButtonSize = 'large' | 'medium' | 'small';
-
-type ButtonType = 'filled' | 'outline' | 'text';
+import { ButtonSize, ButtonType } from '../shared/types';
 
 type IconDirection = 'left' | 'right';
 
@@ -16,4 +13,4 @@ type CustomButtonProps = PressableProps & {
   };
 };
 
-export type { CustomButtonProps, ButtonSize, ButtonType };
+export type { CustomButtonProps, ButtonType };

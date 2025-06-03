@@ -2,8 +2,9 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { fonts } from '@/styles/Fonts';
 import { ArrowLeft, ArrowRight } from '@/shared/assets/icons/arrow';
 import { CustomButtonProps } from '@/components/common/button/customButton/buttonTypes';
-import { getButtonSize, getButtonStyle, getTypoStyle } from '@/components/common/button/customButton/buttonUtils';
-import { BUTTON_ICON } from '@/components/common/button/customButton/buttonConstants';
+import { getButtonStyle, getTypoStyle } from '@/components/common/button/customButton/buttonUtils';
+import { BUTTON_ICON } from './buttonConstants';
+import { getButtonSize } from '../shared/utils';
 
 export default function CustomButton({
   label,

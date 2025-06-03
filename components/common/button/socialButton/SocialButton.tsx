@@ -1,21 +1,17 @@
-import { Pressable, PressableProps, StyleSheet, Text, View } from 'react-native';
-import { getButtonSize } from '@/components/common/button/customButton/buttonUtils';
-import { ButtonSize, ButtonType } from '@/components/common/button/customButton/buttonTypes';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { fonts } from '@/styles/Fonts';
-import { getSocialButtonStyle, getSocialTypoStyle } from './socialButtonUtils';
 import { Google } from '@/shared/assets/icons/social';
+import { getSocialButtonStyle, getSocialTypoStyle } from './socialButtonUtils';
+import { getButtonSize } from '../shared/utils';
+import { SocialButtonProps } from './socialButtonTypes';
 
-type Props = PressableProps & {
-  label?: string;
-  isDisable?: boolean;
-  size?: ButtonSize;
-  type?: ButtonType;
-  icon?: {
-    type: 'google' | 'facebook' | 'apple';
-  };
-};
-
-export default function SocialButton({ label, isDisable = false, size = 'large', type = 'filled', ...props }: Props) {
+export default function SocialButton({
+  label,
+  isDisable = false,
+  size = 'large',
+  type = 'filled',
+  ...props
+}: SocialButtonProps) {
   return (
     <Pressable
       style={({ pressed }) => [styles.base, getButtonSize(size), getSocialButtonStyle(pressed, type, isDisable)]}
@@ -38,7 +34,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderRadius: 16,
-
     justifyContent: 'center',
     alignItems: 'center',
   },
