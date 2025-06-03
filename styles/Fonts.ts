@@ -35,10 +35,18 @@ export const fonts = {
     Btn1: {
       fontFamily: 'Inter-SemiBold',
       fontSize: 16,
+      lineHeight: 18,
+      letterSpacing: 0.32,
+      includeFontPadding: false,
+      textAlignVertical: 'center',
     },
     Btn2: {
       fontFamily: 'Inter-SemiBold',
       fontSize: 14,
+      lineHeight: 16,
+      letterSpacing: 0.28,
+      includeFontPadding: false,
+      textAlignVertical: 'center',
     },
   },
 } satisfies FontSystem;
