@@ -10,9 +10,15 @@ export default function AuthScreen() {
       <WelcomeTitle title={'반가워요!'} subtitle={'당신만의 여정, 지금부터 시작됩니다'} />
       <View>
         <View>
-          <SocialButton label={'구글로 시작하기'} type={'outline'} />
-          <Text>페이스북</Text>
-          <Text>애플</Text>
+          <SocialButton
+            label={'Google로 시작하기'}
+            type={'outline'}
+            icon={{
+              type: 'google',
+            }}
+          />
+          <SocialButton label={'FaceBook으로 시작하기'} type={'outline'} icon={{ type: 'facebook' }} />
+          <SocialButton label={'Apple로 시작하기'} type={'outline'} icon={{ type: 'apple' }} />
         </View>
 
         <View>
