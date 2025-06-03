@@ -1,9 +1,12 @@
-import { Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
+import { useRouter } from 'expo-router';
 
 export default function Index() {
+  const router = useRouter();
   return (
     <View>
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>Main Page</Text>
+      <Button title={'로그인'} onPress={() => router.push('/auth')} />
     </View>
   );
 }

@@ -1,6 +1,7 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StyleSheet, Text, View } from 'react-native';
 import { WelcomeTitle } from '@/components/auth';
+import { CustomButton } from '@/components/common';
 
 export default function AuthScreen() {
   return (
@@ -17,7 +18,7 @@ export default function AuthScreen() {
           <Text>Or</Text>
         </View>
         <View>
-          <Text>Login</Text>
+          <CustomButton label={'로그인'} size={'large'} onPress={() => console.log('로그인')} />
         </View>
       </View>
 

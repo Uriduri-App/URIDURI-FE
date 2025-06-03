@@ -3,12 +3,14 @@ import { fonts } from '@/styles/Fonts';
 import { ArrowLeft, ArrowRight } from '@/shared/assets/icons/arrow';
 import { CustomButtonProps } from '@/components/common/button/buttonTypes';
 import { getButtonSize, getButtonStyle, getTypoStyle } from '@/components/common/button/buttonUtils';
+import { BUTTON_ICON } from '@/components/common/button/buttonConstants';
 
 export default function CustomButton({
   label,
   isDisable = false,
   size = 'large',
   type = 'filled',
+  icon,
   ...props
 }: CustomButtonProps) {
   return (
@@ -19,9 +21,13 @@ export default function CustomButton({
       style={({ pressed }) => [styles.base, getButtonSize(size), getButtonStyle(pressed, type, isDisable)]}>
       {({ pressed }) => (
         <View style={styles.typoBase}>
-          <ArrowLeft size={24} color={getTypoStyle(pressed, type, isDisable).color} />
+          {icon && icon.direction === BUTTON_ICON['LEFT'] && (
+            <ArrowLeft size={24} color={getTypoStyle(pressed, type, isDisable).color} />
+          )}
           <Text style={[styles.label, getTypoStyle(pressed, type, isDisable)]}>{label}</Text>
-          <ArrowRight size={24} color={getTypoStyle(pressed, type, isDisable).color} />
+          {icon && icon.direction === BUTTON_ICON['RIGHT'] && (
+            <ArrowRight size={24} color={getTypoStyle(pressed, type, isDisable).color} />
+          )}
         </View>
       )}
     </Pressable>
@@ -30,7 +36,6 @@ export default function CustomButton({
 
 const styles = StyleSheet.create({
   base: {
-    height: 48,
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 16,
@@ -39,10 +44,13 @@ const styles = StyleSheet.create({
   },
   label: {
     ...fonts.button.Btn1,
+    marginTop: 3.5,
   },
 
   typoBase: {
     gap: 4,
+    display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
   },
 });
