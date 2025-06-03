@@ -1,5 +1,5 @@
-import { buttonSize, buttonStyles, typoStyles } from '@/components/common/button/buttonStyles';
-import { ButtonSize, ButtonType } from '@/components/common/button/buttonTypes';
+import { buttonSize, buttonStyles, typoStyles } from '@/components/common/button/customButton/buttonStyles';
+import { ButtonSize, ButtonType } from '@/components/common/button/customButton/buttonTypes';
 
 const getButtonStyle = (pressed: boolean, type: ButtonType, isDisable: boolean) => {
   if (isDisable) return buttonStyles[type].disabled;
